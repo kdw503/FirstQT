@@ -16,9 +16,12 @@ FirstQT::FirstQT(QWidget *parent)
 //	connect(workerThread, SIGNAL(started()), worker, SLOT(process()));
 	connect(workerThread, SIGNAL(finished()), worker, SLOT(deleteLater()));
 	connect(worker, SIGNAL(newLogMsgReady(QString)), this, SLOT(appendLog(QString)));
+	connect(worker, SIGNAL(newLogMsgReady(int)), this, SLOT(appendLog(int)));
 	connect(worker, SIGNAL(resultReady(QString)), this, SLOT(handleResults(QString)));
 //	connect(worker, SIGNAL(error(QString)), this, SLOT(errorString(QString)));
 	connect(workerThread, SIGNAL(finished()), workerThread, SLOT(quit()));
+	connect(this, SIGNAL(workerMemcpy_g()), worker, SLOT(doMemcpy_g()));
+	connect(this, SIGNAL(workerMemcpy()), worker, SLOT(doMemcpy()));
 
 	workerThread->start();
 
@@ -120,6 +123,15 @@ void FirstQT::appendLog(const QString& msg)
 //	nAppendingLog++;
 }
 
+
+void FirstQT::appendLog(const int& result)
+{
+	QString msg;
+	msg.sprintf("%d", result);
+
+	ui.textEdit->append(msg);
+}
+
 void FirstQT::on_workerStartButton_clicked()
 {
 	QString msg;
@@ -153,4 +165,14 @@ void FirstQT::on_workerThreadStartButton_clicked()
 void FirstQT::on_workerThreadEndButton_clicked()
 {
 	emit workerThreadStop();
+}
+
+void FirstQT::on_memcpy_g_Button_clicked()
+{
+	emit workerMemcpy_g();
+}
+
+void FirstQT::on_memcpyButton_clicked()
+{
+	emit workerMemcpy();
 }

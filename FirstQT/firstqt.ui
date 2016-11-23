@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>421</height>
+    <width>604</width>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -82,13 +82,39 @@
      <string>worker thread end</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="memcpy_g_Button">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>300</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>memcpy_g</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="memcpyButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>330</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>memcpy</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>604</width>
      <height>21</height>
     </rect>
    </property>

@@ -23,32 +23,17 @@ public:
 	}
 
 public slots:
-	void doWork() {
-		if (get_runWork())
-			return;
-//		QString msg = QString("ID of thread where %1 object reside : %2")
-//			.arg("woker").arg((long long)(QThread::currentThreadId()));
-		QString msg;
-		msg.sprintf("ID of thread where worker object reside : 0x%x", (long long)(QThread::currentThreadId()));
-		set_runWork(1);
-		emit newLogMsgReady(msg);
-		emit newLogMsgReady("Worker is running..\n");
-		do {
-			for (int i = 0; i < 100; i++)
-				if(i==10)i=i;
-			emit newLogMsgReady(".");
-//			qDebug(".");
-			QApplication::instance()->processEvents();
-			QThread::msleep(1000);
-		} while(get_runWork());
-		emit resultReady("Worker");
-	}
+	void doWork();
+	void doMemcpy_g();
+	void doMemcpy();
+
 	void stopWork() {
 		set_runWork(0);
 	}
 
 signals:
-	void newLogMsgReady(const QString &result);
+	void newLogMsgReady(const QString &msg);
+	void newLogMsgReady(const int &result);
 	void resultReady(const QString &result);
 };
 

@@ -6,6 +6,10 @@
 #include "worker.h"
 #include "workerthread.h"
 
+#include "timer_g.hpp"
+#include "memcpy_g.h"
+#include <assert.h>
+
 class FirstQT : public QMainWindow
 {
     Q_OBJECT
@@ -26,6 +30,8 @@ signals:
 	void workerStop();
 	void workerThreadOperate(const bool &);
 	void workerThreadStop();
+	void workerMemcpy_g();
+	void workerMemcpy();
 
 private slots:
 	void on_actionOpen_triggered();
@@ -36,8 +42,12 @@ private slots:
 	void on_workerEndButton_clicked();
 	void on_workerThreadStartButton_clicked();
 	void on_workerThreadEndButton_clicked();
+	void on_memcpy_g_Button_clicked();
+	void on_memcpyButton_clicked();
+	
 	void exit();
 	void handleResults(const QString&);
 	void appendLog(const QString& );
+	void appendLog(const int&);
 
 };

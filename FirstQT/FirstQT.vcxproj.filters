@@ -68,6 +68,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_workerthread.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="firstqt.h">
@@ -89,6 +92,12 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_firstqt.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcpy_g.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timer_g.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
