@@ -39,6 +39,10 @@ void Worker::doMemcpy_g() {
 //	msg = "allBuf[100] : " + msg;
 //	emit newLogMsgReady(msg);
 
+//	emit newLogMsgReady(QString("Memcpy_g @time=%1 s")
+//		.arg(gt.read(), 10, 'f', 4) //width=10, fixed point, 4 decimal digits 
+//	);
+
 	gt.start(); // reset clock 0
 	double startTime = gt.read();
 	msg.clear();
