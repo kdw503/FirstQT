@@ -27,18 +27,20 @@ A graphical interface for recording with OCPI microscopes..
    ```	
    - add an environment variable QWTDIR as C:\qwt-6.1.3
 
-5. Install Boost (boost_1_57_0.zip)
+5. Install Boost v1.57.0
    - extract .zip file to c:\Program Files\boost
    - open the Visual Studio tools directory under the Start   
      menu, select "Developer's command prompt"(run as administrator)
+     ```
        > cd c:\Program Files\boost\boost_1_57_0
        > bootstrap.bat
        > .\b2 address-model=64 toolset=msvc-12.0
-
+     ```
+     
 6. Install camera SDK
    - run SW_PCOSDKWIN_123
    - Choose interface type
-	 			ex) Silicon Software Dll MeIV or Camera Link HS
+	ex) Silicon Software Dll MeIV or Camera Link HS
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
 		C/C++
@@ -53,7 +55,7 @@ A graphical interface for recording with OCPI microscopes..
 			Input
 				Additional Dependencies : add SC2_cam.lib
 
-7. Install NI DAQ (NIDAQ1700f0.zip)
+7. Install NI(National Instrument) DAQ driver
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
 		C/C++
