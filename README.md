@@ -7,23 +7,29 @@ A graphical interface for recording with OCPI microscopes..
 1. Install Visual Studio 2015
    - make sure you installed "common tools" when you install
 
-2. Install QT5 (qt-unified-windows-x86-3.0.0-online.exe)
+2. Install QT5
    - make sure the version of QT is for 64bit
 
-3. Install QT add-in for vc2015 (qt-opensource-windows-x86-msvc2015_64-5.7.0.exe)
+3. Install QT add-in for vc2015
    - install add-in
    - go to QT VS Tools tab in visual studio and set the right directory
 	* for vc2017 and Qt5.11 : set this as C:\Qt\5.11.2\msvc2017_64
 
-4. Install QWT (qwt-6.1.3.zip)
+4. Install QWT v6.1.3
    - open the Visual Studio tools directory under the windows Start menu, select "Developer's command prompt"(run as admintrator)
    	> cd VC
+	
    	> vcvarsall amd64
+	
    	> cd [qwt directory (extract .zip to c:\ then it will create Qwt-6.1.3 directory)]
+	
    	> C:\Qt_5_7\5.7\msvc2015_64\bin\qmake qwt.pro
+	
    	> nmake (if you recompile everything again, C:\Qwt-6.1.3\src\release directory should be clear)
+	
    	> nmake install
-    - add an environment variable QWTDIR as C:\qwt-6.1.3
+	
+   - add an environment variable QWTDIR as C:\qwt-6.1.3
 
 5. Install Boost (boost_1_57_0.zip)
    - extract .zip file to c:\Program Files\boost
