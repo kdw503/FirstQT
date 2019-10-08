@@ -17,18 +17,14 @@ A graphical interface for recording with OCPI microscopes..
 
 4. Install QWT v6.1.3
    - open the Visual Studio tools directory under the windows Start menu, select "Developer's command prompt"(run as admintrator)
+   ```
    	> cd VC
-	
    	> vcvarsall amd64
-	
    	> cd [qwt directory (extract .zip to c:\ then it will create Qwt-6.1.3 directory)]
-	
    	> C:\Qt_5_7\5.7\msvc2015_64\bin\qmake qwt.pro
-	
    	> nmake (if you recompile everything again, C:\Qwt-6.1.3\src\release directory should be clear)
-	
    	> nmake install
-	
+   ```	
    - add an environment variable QWTDIR as C:\qwt-6.1.3
 
 5. Install Boost (boost_1_57_0.zip)
