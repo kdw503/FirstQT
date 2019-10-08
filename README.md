@@ -43,17 +43,19 @@ A graphical interface for recording with OCPI microscopes..
 	ex) Silicon Software Dll MeIV or Camera Link HS
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++
-			General
-				Additional Include Directories : add below item
-					C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\include
-		Linker
-			General
-				Additional Library Directories : add below items
-					C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\lib64
-					C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\bin64
-			Input
-				Additional Dependencies : add SC2_cam.lib
+		C/C++/General/Additional/Include Directories
+		
+		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\include
+		    
+		Linker/General/Additional/Library Directories
+		
+		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\lib64
+		
+		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\bin64
+		
+		Linker/Input/Additional/Dependencies
+		
+		    add SC2_cam.lib
 
 7. Install NI(National Instrument) DAQ driver
    - Setup target project of visual studio : open project and bring up property page
