@@ -43,7 +43,7 @@ A graphical interface for recording with OCPI microscopes..
 	ex) Silicon Software Dll MeIV or Camera Link HS
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++/General/Additional/Include Directories
+		C/C++>General>Additional>Include Directories
 		
 		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\include
 		    
@@ -55,21 +55,22 @@ A graphical interface for recording with OCPI microscopes..
 		
 		Linker/Input/Additional/Dependencies
 		
-		    add SC2_cam.lib
+		    SC2_cam.lib
 
 7. Install NI(National Instrument) DAQ driver
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++
-			General
-				Additional Include Directories : add below item
-					C:\Program Files (x86)\National Instruments\NI-DAQ\DAQmx ANSI C Dev\include
-		Linker
-			General
-				Additional Library Directories : add below item
-					C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\lib64\msvc
-			Input
-				Additional Dependencies : add NIDAQmx.lib
+		C/C++/General/Additional/Include Directories
+		
+		    C:\Program Files (x86)\National Instruments\NI-DAQ\DAQmx ANSI C Dev\include
+					
+		Linker/General/Additional/Library Directories
+		
+		    C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\lib64\msvc
+
+		Linker/Input/Additional/Dependencies
+
+		    NIDAQmx.lib
 
 8. Modify some items in the preference of Imagine project, if the directory of camera sdk installation is changed from the OCPI's setting.
    - include dir : .....pco.edge\include
@@ -90,14 +91,17 @@ A graphical interface for recording with OCPI microscopes..
 	lib /machine:x64 /def:libfftw3l-3.def
     - Setup visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++
-			General
-				Additional Include Directories : add C:\FFTW
-		Linker
-			General
-				Additional Library Directories : add C:\FFTW
-			Input
-				Additional Dependencies : add libfftw3-3.lib, libfftw3f-3.lib, libfftw3l-3.lib
+		C/C++/General/Additional/Include Directories
+		
+		    C:\FFTW
+		    
+		Linker/General/Additional/Library Directories
+		
+		    C:\FFTW
+		    
+		Linker/Input/Additional/Dependencies
+		
+		    libfftw3-3.lib, libfftw3f-3.lib, libfftw3l-3.lib
 
 10. Copy all files needed in the output directory and 'Working Directory' (Specified in Configuration Properties>Debugging>Working Directory)
    - Camera related dlls : SC2_Cam.dll, sc2_clhs.dll(REALM), sc2_cl_me4.dll(OCPI)
