@@ -47,28 +47,28 @@ A graphical interface for recording with OCPI microscopes..
 		
 		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\include
 		    
-		Linker/General/Additional/Library Directories
+		Linker>General>Additional>Library Directories
 		
 		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\lib64
 		
 		    C:\Users\user\AppData\Roaming\Digital Camera Toolbox\pco.sdk\bin64
 		
-		Linker/Input/Additional/Dependencies
+		Linker>Input>Additional>Dependencies
 		
 		    SC2_cam.lib
 
 7. Install NI(National Instrument) DAQ driver
    - Setup target project of visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++/General/Additional/Include Directories
+		C/C++>General>Additional>Include Directories
 		
 		    C:\Program Files (x86)\National Instruments\NI-DAQ\DAQmx ANSI C Dev\include
 					
-		Linker/General/Additional/Library Directories
+		Linker>General>Additional>Library Directories
 		
 		    C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\lib64\msvc
 
-		Linker/Input/Additional/Dependencies
+		Linker>Input>Additional>Dependencies
 
 		    NIDAQmx.lib
 
@@ -91,15 +91,15 @@ A graphical interface for recording with OCPI microscopes..
 	lib /machine:x64 /def:libfftw3l-3.def
     - Setup visual studio : open project and bring up property page
 	Configuration Properties
-		C/C++/General/Additional/Include Directories
+		C/C++>General>Additional>Include Directories
 		
 		    C:\FFTW
 		    
-		Linker/General/Additional/Library Directories
+		Linker>General>Additional>Library Directories
 		
 		    C:\FFTW
 		    
-		Linker/Input/Additional/Dependencies
+		Linker>Input>Additional>Dependencies
 		
 		    libfftw3-3.lib, libfftw3f-3.lib, libfftw3l-3.lib
 
