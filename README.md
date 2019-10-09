@@ -130,6 +130,21 @@ In the script control mode, we can execute a java script code in the Imagine. In
 
 In the Imagine GUI, general settings, parameter control settings and .json file name for waveform control can be saved in an configuration file with a ‘save configuration’ command in file menu. In script control mode, we can load, verify and record with this configuration file.
 
+Typical work flow is as follows.
+
+a. Prepare sepecimen
+
+b. Caputure full live image with a "live" button
+
+c. Set parameters of display : intensity scale, zoom region, etc
+
+d. Set parameters for an experiment : camera, positioner, laser, stimuli, output filename, etc
+
+e. Press "Apply all" button : This varifies if the setting parameters are valid. If not, Imagine rejects the settings
+
+f. Start acquisition : If the parameters are valid, we can start acquistion by clicking a "record" button.
+
+g. Inspect the acquired data : Once the acquisition is end, we can varify the acquisition if it is ended normally or interrupted by some errors, Using "display" tab and "AI and DI" tab, we can varify that and also briefly check if we got the desired data.
 
 
 ### Graphic User Interface
@@ -138,34 +153,24 @@ In the Imagine GUI, general settings, parameter control settings and .json file 
 
 Imagine GUI is composed with several sections as listed below with numbers corresponding the numbers in the above image.
 
-1: Parameters and display control window
-2: Display window
-3: Log window
-4: Stimuli window
-5: Main menu
-Typical work flow is as follows.
-
-a. Prepare sepecimen
-b. Caputure full live image with a "live" button
-c. Set parameters of display : intensity scale, zoom region, etc
-d. Set parameters for an experiment : camera, positioner, laser, stimuli, output filename, etc
-e. Press "Apply all" button : This varifies if the setting parameters are valid. If not, Imagine rejects the settings
-f. Start acquisition : If the parameters are valid, we can start acquistion by clicking a "record" button.
-g. Inspect the acquired data : Once the acquisition is end, we can varify the acquisition if it is ended normally or interrupted by some errors, Using "display" tab and "AI and DI" tab, we can varify that and also briefly check if we got the desired data.
-
 1. Parameters and display control window
+
 This window is designed for setting overall parameters for the microscope operation and display. This window consists of tree main sections which are "Config and control", "Histogram" and "Intensity". Currently, "Intensity" tab is not used. "Histogram" section displays histogram of an image displayed in "Display window". "Config and control" tab is designed for setting overall parameters such as camera control, postioner control, laser control and stimuli control which are used to config an experiment. Also, it provides some basic tools for the following inspection of acquired data.
 
 2. Display window
+
 This window displays live images from the cameras attaced to the microscope or captured images during the acqusition or after the acquisition by loading the '.imagine' file at the "Display" tab. In this window, we can zoom the image. This zoomed region can be set as a soft ROI region at the "camera" tab.
 
 3. Log window
+
 This window displays log messages.
 
 4. Stimuli window
+
 This window makes a list of stimulus numbers according to the stack numbers when we load stimuli file. Details are explained in the explanation of "Stimuli" tab.
 
 5. Main menu
+
 Details are explained in the explanation of main menu page.
 
 
@@ -213,24 +218,25 @@ This tab is designed for setting the location and filename of output file and ad
 
 ![alt text](doc/menu02_camera.png)
 
-Record both cameras : eables to record both cameras.
-number of stacks : sets the number of stacks.
-number of frames/stack : sets the number of frames in a stack.
-exposure time(s) : set exposure time. This value is valid only for "External Start" mode in exposure trigger mode.
-exposure trigger mode : selects exposure trigger mode. Refer to the explanation in the exposure trigger mode section.
-idle time between stacks(s) : sets idle time between stacks.
-bi-directional imaging : makes an acquition enable during the positioner travel back time also. Refer to the bi-directional imaging waveform below.
-angle from horizontal(deg) : specifies angle between objective lens and horizontal plain. This is just used as an information.
-objective lens : secifies zoom factor of the objective lens. This is just used as an information.
-um per pixel (xy plane) : secifies pixel size. This can be also calculated from the zoom factor. This is just used as an information.
-hor. start : sets the horizontal start of the sensor ROI or displays horizontal start of the soft ROI when we press "use zoom window value" button. Refer to the ROI section.
-hor. end : sets the horizontal end of the sensor ROI or displays horizontal end of the soft ROI when we press "use zoom window value" button.
-ver. start : sets the vertical start of the sensor ROI or displays vertical start of the soft ROI when we press "use zoom window value" button.
-ver. end : sets the vertical end of the sensor ROI or displays vertical end of the soft ROI when we press "use zoom window value" button.
-use zoom window value : enables soft ROI with the region selected by zoom window.
+- Record both cameras : eables to record both cameras.
+- number of stacks : sets the number of stacks.
+- number of frames/stack : sets the number of frames in a stack.
+- exposure time(s) : set exposure time. This value is valid only for "External Start" mode in exposure trigger mode.
+- exposure trigger mode : selects exposure trigger mode. Refer to the explanation in the exposure trigger mode section.
+- idle time between stacks(s) : sets idle time between stacks.
+- bi-directional imaging : makes an acquition enable during the positioner travel back time also. Refer to the bi-directional imaging waveform below.
+- angle from horizontal(deg) : specifies angle between objective lens and horizontal plain. This is just used as an information.
+- objective lens : secifies zoom factor of the objective lens. This is just used as an information.
+- um per pixel (xy plane) : secifies pixel size. This can be also calculated from the zoom factor. This is just used as an information.
+- hor. start : sets the horizontal start of the sensor ROI or displays horizontal start of the soft ROI when we press "use zoom window value" button. Refer to the ROI section.
+- hor. end : sets the horizontal end of the sensor ROI or displays horizontal end of the soft ROI when we press "use zoom window value" button.
+- ver. start : sets the vertical start of the sensor ROI or displays vertical start of the soft ROI when we press "use zoom window value" button.
+- ver. end : sets the vertical end of the sensor ROI or displays vertical end of the soft ROI when we press "use zoom window value" button.
+- use zoom window value : enables soft ROI with the region selected by zoom window.
 full chip size : enable full size imaging.
 
 3. Stimuli tab
+
 ![alt text](doc/menu03_stimuli.png)
 
 - Stimulus file : selects a .stim file. Then, Imagine will display the specified stimuli discription in the editing window and generate stimuli table listed in the Stimuli window.
@@ -239,6 +245,7 @@ full chip size : enable full size imaging.
 this figure, 'HR_test.stim' file is loaded, which shows an example descrition of stimuli. Here, several pairs of numbers are listed. The left number is a stack number and the right number is a stimulus number. If "Apply stimuli" is enabled, the stimulus number will be encoded with a 4-bit binary number and then each bits will be used to generate TTL pulses to channel P0.0 ~ P0.3.
 
 4. Display tab
+
 ![alt text](doc/menu05_display.png)
 
 - Display area size : scales the display size.
@@ -247,11 +254,13 @@ this figure, 'HR_test.stim' file is loaded, which shows an example descrition of
 - Save current image : takes a snapshot of current display window.
 
 5. Laser tab
+
 ![alt text](doc/menu06_laser.png)
 
 The laser module of OCPI-2 has five different wavelengths. We can turn on and off an individual laser by checking the checkbox beside which the wavelength is labled. The power of the laser can be also adjusted with slide bars and spinboxes. During the laser setting, we need to open the main laser shutter by clicking the "Open Shutter" button in the main menu. If we use waveform control mode, we can control the each shutters of the five individual wavelengths differently.
 
 6. Waveform tab
+
 ![alt text](doc/menu07_waveform.png)
 
 - Enable : makes the waveform control mode enable. If disalbed, the parameter control mode is selected.
@@ -261,80 +270,95 @@ The laser module of OCPI-2 has five different wavelengths. We can turn on and of
 - waveform display controls : enables us to select which waverform and to set a x axis interval or a y interval to display (only display purpose).
 
 7. AI and DI tab
+
 ![alt text](doc/menu08_ai_and_di.png)
 
-Imagine file name : selects a .imagine file. Then, Imagine will load .ai and .di file which include data of analog input signals and digital input signals respectively.
-Waveform display controls : enables us to select which waverform and to set a x axis interval(x min, x max) or a y axis interval(y min, y max) to display. Notice the "Redraw" button. Different from the waveform display control in "waveform" tab, the waveform display window will be updated only when we press this button for the x interval change.
+- Imagine file name : selects a .imagine file. Then, Imagine will load .ai and .di file which include data of analog input signals and digital input signals respectively.
+- Waveform display controls : enables us to select which waverform and to set a x axis interval(x min, x max) or a y axis interval(y min, y max) to display. Notice the "Redraw" button. Different from the waveform display control in "waveform" tab, the waveform display window will be updated only when we press this button for the x interval change.
 
 8. Script tab
+
 ![alt text](doc/menu09_script.png)
 
-Script file : selects a .jl script file. Then, Imagine will display the specified script in the editing window
-Undo : undoes the last change in the editing window.
-Redo : redoes the last undo in the editing window.
-Save : saves the script in the editing window to .jl file.
-Execute : executes the script in the editing window.
-Stop : stops the execution.
+- Script file : selects a .jl script file. Then, Imagine will display the specified script in the editing window
+- Undo : undoes the last change in the editing window.
+- Redo : redoes the last undo in the editing window.
+- Save : saves the script in the editing window to .jl file.
+- Execute : executes the script in the editing window.
+- Stop : stops the execution.
 
 In this figure, 'scriptControlTest.js' file is loaded, which shows example script descriptions.
 
 2. Script control mode
+
 In the script control mode, we can execute a java script code in the Imagine. In addition, Imagine provides several java functions for user to access some essential operations which are used to record data. Thereby, we can execute several experiments according to the control flow specified with java script code by one execution without intervention.
 
 In the Imagine GUI, general settings, parameter control settings and .json file name for waveform control can be saved in an configuration file with a ‘save configuration’ command in file menu. In script control mode, we can load, verify and record with this configuration file.
 
 (1) System functions provided by the Imagine
+
 print()
+
 prints string to the log terminal.
 
 ex) print("Hello world!");
 
 validityCheck()
+
 applies loaded configuration to data acquisition task and checks the validity of config files. This works as if we press a ‘Apply all’ button in the Imagine GUI after loading configuration files if these files are specified.
 
 ex) var isOK = validityCheck("OCPI_cfg1.txt", "OCPI_cfg2.txt"); var isOK = validityCheck();
 
 applyConfiguration()
+
 This works same as validityCheck() function.
 
 ex) applyConfiguration();
 
 record()
+
 begins to record. This works as if we press a ‘Record’ button in the Imagine GUI after loading configuration files if these are specifies. If configuration files are not specified, this just records according to the current configuration. This function return ‘false’ if execution time passes ‘timeout’ time, otherwise return ‘true.
 
 ex) var isSucceed = record("OCPI_cfg1.txt", "OCPI_cfg2.txt", timeout); var isSucceed = record(timeout);
 
 loadConfig()
+
 loads configuration files.
 
 ex) loadConfig("OCPI_cfg1.txt", "OCPI_cfg2.txt"); loadConfig("OCPI_cfg1.txt“);
 
 loadWaveform()
+
 loads a waveform file.
 
 ex) loadWaveform("OCPI_waveform.json");
 
 sleepms()
+
 makes the script execution sleep specified times in milisecond.
 
 ex) sleepms(1000); // sleep 1000msec
 
 setOutputFilename()
+
 changes output file names with specified file names.
 
 ex) setOutputFilename("t1.imagine","t2.imagine"); setOutputFilename("t1.imagine");
 
 getEstimatedRunTime()
+
 returns estimated recording time in second. This time is calculated from total sample number of waveform signal. Therefore, it would take more time in actual acquisition which requires additional preparing and finishing times. These overhead times are less than 30sec in total.
 
 ex) var time = getEstimatedRunTime();
 
 stopRecord()
+
 stop recording. This function is useful to get a control again when the Imagine lose a control after record() is fail.
 
 ex) stopRecord();
 
 getTimeElapsed(int dt)
+
 return various elapsed times according to 'dt' value.
 
 0: record start to DAQ pulses output start
@@ -350,6 +374,7 @@ ex) total_elapsed_time = getTimeElapsed(0) + getTimeElapsed(1) + getTimeElapsed(
 ex) function current_time() {return getTimeElapsed(3);}
 
 (2) Javascript objects
+
 We can also use existing javascript objects.
 
 ex) print(Math.sqrt(64)+Math.abs(-1)+Math.log(10));
