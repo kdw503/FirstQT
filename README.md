@@ -287,77 +287,77 @@ The laser module of OCPI-2 has five different wavelengths. We can turn on and of
 - Execute : executes the script in the editing window.
 - Stop : stops the execution.
 
-In this figure, 'scriptControlTest.js' file is loaded, which shows example script descriptions.
+In this figure, 'scriptControlTest.js' file is loaded, which shows example script descriptions. This script control mode will be explained in more detail in the next section.
 
-2. Script control mode
+### Script control mode
 
 In the script control mode, we can execute a java script code in the Imagine. In addition, Imagine provides several java functions for user to access some essential operations which are used to record data. Thereby, we can execute several experiments according to the control flow specified with java script code by one execution without intervention.
 
 In the Imagine GUI, general settings, parameter control settings and .json file name for waveform control can be saved in an configuration file with a ‘save configuration’ command in file menu. In script control mode, we can load, verify and record with this configuration file.
 
-(1) System functions provided by the Imagine
+1. System functions provided by the Imagine
 
-print()
+- print()
 
 prints string to the log terminal.
 
 ex) print("Hello world!");
 
-validityCheck()
+- validityCheck()
 
 applies loaded configuration to data acquisition task and checks the validity of config files. This works as if we press a ‘Apply all’ button in the Imagine GUI after loading configuration files if these files are specified.
 
 ex) var isOK = validityCheck("OCPI_cfg1.txt", "OCPI_cfg2.txt"); var isOK = validityCheck();
 
-applyConfiguration()
+- applyConfiguration()
 
 This works same as validityCheck() function.
 
 ex) applyConfiguration();
 
-record()
+- record()
 
 begins to record. This works as if we press a ‘Record’ button in the Imagine GUI after loading configuration files if these are specifies. If configuration files are not specified, this just records according to the current configuration. This function return ‘false’ if execution time passes ‘timeout’ time, otherwise return ‘true.
 
 ex) var isSucceed = record("OCPI_cfg1.txt", "OCPI_cfg2.txt", timeout); var isSucceed = record(timeout);
 
-loadConfig()
+- loadConfig()
 
 loads configuration files.
 
 ex) loadConfig("OCPI_cfg1.txt", "OCPI_cfg2.txt"); loadConfig("OCPI_cfg1.txt“);
 
-loadWaveform()
+- loadWaveform()
 
 loads a waveform file.
 
 ex) loadWaveform("OCPI_waveform.json");
 
-sleepms()
+- sleepms()
 
 makes the script execution sleep specified times in milisecond.
 
 ex) sleepms(1000); // sleep 1000msec
 
-setOutputFilename()
+- setOutputFilename()
 
 changes output file names with specified file names.
 
 ex) setOutputFilename("t1.imagine","t2.imagine"); setOutputFilename("t1.imagine");
 
-getEstimatedRunTime()
+- getEstimatedRunTime()
 
 returns estimated recording time in second. This time is calculated from total sample number of waveform signal. Therefore, it would take more time in actual acquisition which requires additional preparing and finishing times. These overhead times are less than 30sec in total.
 
 ex) var time = getEstimatedRunTime();
 
-stopRecord()
+- stopRecord()
 
 stop recording. This function is useful to get a control again when the Imagine lose a control after record() is fail.
 
 ex) stopRecord();
 
-getTimeElapsed(int dt)
+- getTimeElapsed(int dt)
 
 return various elapsed times according to 'dt' value.
 
@@ -373,13 +373,13 @@ ex) total_elapsed_time = getTimeElapsed(0) + getTimeElapsed(1) + getTimeElapsed(
 
 ex) function current_time() {return getTimeElapsed(3);}
 
-(2) Javascript objects
+2.  Javascript objects
 
 We can also use existing javascript objects.
 
 ex) print(Math.sqrt(64)+Math.abs(-1)+Math.log(10));
 
-(3) Example
+3. Example
 
 ```javascript
 var ret1, ret2, ret3, ret11, ret22, ret33;
