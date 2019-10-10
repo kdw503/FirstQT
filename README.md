@@ -132,7 +132,7 @@ We need to install below items
 11. Now, we can build Imagine project. But, to execute the Imagine, we need to copy all files below under the 'Output Directory' and 'Working Directory' of Imagine project.
    - Camera related dlls (located in C:\Program Files (x86)\Digital Camera Toolbox\pco.sdk\bin) : SC2_Cam.dll and camera interface dll (sc2_clhs.dll or sc2_cl_me4.dll)
    - QT related dlls (located under the installed directory (ex) C:\Qt\Qt5.7.0\5.7\msvc2015_64\bin) :
-   		Qt5Core.dll, Qt5Gui.dll, Qt5OpenGL.dll, Qt5PrintSupport.dll, Qt5Script.dll, Qt5SerialPort.dll, Qt5Svg.dll, Qt5Widgets.dll
+	Qt5Core.dll, Qt5Gui.dll, Qt5OpenGL.dll, Qt5PrintSupport.dll, Qt5Script.dll, Qt5SerialPort.dll, Qt5Svg.dll, Qt5Widgets.dll
    - QWT related dll (located in C:\Qwt-6.1.3\lib): qwt.dll
    - FFTW related dll (located in C:\FFTW): libfftw3-3.dll, libfftw3f-3.dll, libfftw3l-3.dll
    - JavaScript files (located in (Imagine directory)\Imagine\scripts) : imagine.js, 'related rig name'.js ((ex) ocpi-2.js)
