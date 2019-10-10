@@ -2,7 +2,28 @@
 
 A graphical interface for recording with OCPI microscopes.
 
+## Companion paper
+A paper explaining most of the implementation details and related hardware can be found [here](https://www.nature.com/articles/s41467-019-12340-0).
+
+```
+@article{giovannucci2019caiman,
+  title={Fast objective coupled planar illumination microscopy},
+  author = {Greer, Cody and Holy, Timothy E.},
+  journal={Nature Communications},
+  volume={10},
+  pages={4483},
+  year={2019},
+  URL = {https://doi.org/10.1038/s41467-019-12340-0},
+  eprint = {https://www.nature.com/articles/s41467-019-12340-0.pdf},
+  doi = {10.1038/s41467-019-12340-0}
+}
+```
+
 ## Installation
+
+- Imagine
+- Software development tools and libraries : Visual studio, QT, QWT, Boost, FFTW
+- Hardware related SDK and driver : PCO camera SDK,  National Instrument DAQ driver
 
 1. Clone this Imagine repository
 
