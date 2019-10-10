@@ -6,7 +6,7 @@ A graphical interface for recording with OCPI microscopes.
 A paper explaining most of the implementation details and related hardware can be found [here](https://www.nature.com/articles/s41467-019-12340-0).
 
 ```
-@article{giovannucci2019caiman,
+@article{Greer2019,
   title={Fast objective coupled planar illumination microscopy},
   author = {Greer, Cody and Holy, Timothy E.},
   journal={Nature Communications},
@@ -21,9 +21,12 @@ A paper explaining most of the implementation details and related hardware can b
 
 ## Installation
 
+We need to install below items
 - Imagine
 - Software development tools and libraries : Visual studio, QT, QWT, Boost, FFTW
 - Hardware related SDK and driver : PCO camera SDK,  National Instrument DAQ driver
+
+### Installation steps
 
 1. Clone this Imagine repository
 
@@ -36,7 +39,7 @@ A paper explaining most of the implementation details and related hardware can b
 4. Install QT add-in for vc2015
    - install add-in
    - go to QT VS Tools tab in visual studio and set the right directory
-	* for vc2017 and Qt5.11 : set this as C:\Qt\5.11.2\msvc2017_64
+	ex) for vc2015 and Qt5.7 : set this as C:\Qt\5.7\msvc2015_64
 
 5. Install QWT v6.1.3
    - open the Visual Studio tools directory under the windows Start menu, select "Developer's command prompt"(run as administrator)
@@ -126,9 +129,9 @@ A paper explaining most of the implementation details and related hardware can b
 
 		    libfftw3-3.lib, libfftw3f-3.lib, libfftw3l-3.lib
 
-11. Now, we can build Imagine project. But, to execute the Imagine, we need to copy all files below under the output directory and 'Working Directory'
+11. Now, we can build Imagine project. But, to execute the Imagine, we need to copy all files below under the 'Output Directory' and 'Working Directory' of Imagine project.
    - Camera related dlls (located in C:\Program Files (x86)\Digital Camera Toolbox\pco.sdk\bin) : SC2_Cam.dll and camera interface dll (sc2_clhs.dll or sc2_cl_me4.dll)
-   - QT related dlls (located under the installed directory (ex) C:\Qt\5.11.2\winrt_x64_msvc2015\bin) :
+   - QT related dlls (located under the installed directory (ex) C:\Qt\Qt5.7.0\5.7\msvc2015_64\bin) :
    		Qt5Core.dll, Qt5Gui.dll, Qt5OpenGL.dll, Qt5PrintSupport.dll, Qt5Script.dll, Qt5SerialPort.dll, Qt5Svg.dll, Qt5Widgets.dll
    - QWT related dll (located in C:\Qwt-6.1.3\lib): qwt.dll
    - FFTW related dll (located in C:\FFTW): libfftw3-3.dll, libfftw3f-3.dll, libfftw3l-3.dll
@@ -257,11 +260,11 @@ This tab is designed for setting the location and filename of output file and ad
 full chip size : enable full size imaging.
 
 Some parameters such as exposure time and idle time between stacks are tightly related with some parameters in positioner tab.
-And, some parameters related with ROI are restricted according to  ROI mode such as soft ROI (details are explained in the PCO camera manual). Imagine internally blocks undesired number of these parameters.
+And, some parameters related with ROI are restricted according to  ROI mode such as soft ROI (details about ROI modes are explained in the [PCO camera manual](https://www.pco-tech.com/fileadmin/fileadmin/user_upload/pco-manuals/pco.sdk_manual.pdf)). Imagine internally blocks undesired number of these parameters.
 
 ##### Positioner control waveform and camera control pulse for bi-directional imaging
 
-![alt text](doc/waveform_bidir.png)
+![alt text](doc/waveform_bidir.png =400x)
 
 3. Stimuli tab
 
@@ -273,7 +276,7 @@ this figure, 'HR_test.stim' file is loaded, which shows an example description o
 
 4. Positioner tab
 
-![alt text](docmenu04_positioner.png)
+![alt text](doc/menu04_positioner.png)
 
 This tab is for setting the start position and stop position of positioner and also positioner moving back time.
 
@@ -288,7 +291,7 @@ This tab is for setting the start position and stop position of positioner and a
 
 ##### Positioner control waveform and camera control pulse
 
-![alt text](waveform.png)
+![alt text](doc/waveform.png =400x)
 
 5. Display tab
 
