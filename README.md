@@ -264,7 +264,7 @@ And, some parameters related with ROI are restricted according to  ROI mode such
 
 ##### Positioner control waveform and camera control pulse for bi-directional imaging
 
-![alt text](doc/waveform_bidir.png =400x)
+<img src="doc/waveform_bidir.png" alt="alt text" width="400"/>
 
 3. Stimuli tab
 
@@ -291,7 +291,7 @@ This tab is for setting the start position and stop position of positioner and a
 
 ##### Positioner control waveform and camera control pulse
 
-![alt text](doc/waveform.png =400x)
+<img src="doc/waveform.png" alt="alt text" width="400"/>
 
 5. Display tab
 
